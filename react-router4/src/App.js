@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Topics from './Topics';
 import NotFound from './NotFound'
+import Products from './Products'
 
 const App = () => {
     return (
@@ -13,11 +14,13 @@ const App = () => {
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/topics">Topics</Link></li>
+                    <li><Link to='/products'>Products</Link></li>
                 </ul>
                 <hr/>
                 <Match exactly pattern='/' component={Home}/>
                 <Match pattern='/about' component={About}/>
                 <Match pattern='/topics' component={Topics}/>
+                <Match pattern='/products' component={Products}></Match>
                 <Miss component={NotFound}/>
             </div>
         </Router>
