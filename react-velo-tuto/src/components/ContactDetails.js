@@ -5,8 +5,8 @@ export default class ContactDetails extends Component {
 
         const details = (
             <div>
-                <p>{this.props.contact.name}</p>
-                <p>{this.props.contact.phone}</p>
+                <h2>{this.props.contact.name}</h2>
+                <h2>{this.props.contact.phone}</h2>
             </div>
         );
         const blank = (<div>Not selected</div>);
