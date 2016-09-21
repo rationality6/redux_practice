@@ -1,28 +1,7 @@
-var array = [2,7,9,10,1]
-var a = array.sort(function(a,b){
-    return a-b
-})
-
-// console.log(a);
-
-var b = array.filter(function(a){
-    return a > 5
-})
-
-console.log(b);
-
-array = ['hyun','john']
-var a = array.filter(function(x){
-  return x.indexOf('k') > -1
-})
-console.log(a);
-
-
-
-
-
-
-
+var iter = [1,2,3]
+var iter2 = [...iter,4,5,6]
+console.log(iter2);
+console.log(iter);
 
 
 

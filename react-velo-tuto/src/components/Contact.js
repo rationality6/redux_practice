@@ -3,7 +3,7 @@ import ContactInfo from './ContactInfo'
 import ContactDetails from './ContactDetails'
 import ContactCreate from './ContactCreate'
 
-// import update from 'react-addons-update';
+import update from 'react-addons-update';
 
 export default class Contact extends Component {
     constructor(props){
@@ -54,15 +54,23 @@ export default class Contact extends Component {
 
     handleCreate(contact){
         this.setState({
-            contactData: update(this.state.contactData,contact)
+
+            // contactData: update(
+            //     this.state.contactData,{$push:[contact]}
+            // )
+
+            contactData:[...this.state.contactData,
+                contact
+            ]
+
         })
         console.log('create works');
     }
 
     handleRemove(){
-        // this.setState({
+        this.setState({
 
-        // })
+        })
         console.log('remove works');
     }
 
@@ -101,10 +109,10 @@ export default class Contact extends Component {
                     isSelected={this.state.selectedKey != -1}
                     contact={this.handleSearche(this.state.contactData)[this.state.selectedKey]}
                 />
-            <ContactCreate
-                    onCreate = {this.handleCreate}
+                <ContactCreate
+                        onCreate = {this.handleCreate}
                 ></ContactCreate>
-            <br/>
+                <br/>
             </div>
         )
     }
