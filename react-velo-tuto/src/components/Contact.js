@@ -3,8 +3,6 @@ import ContactInfo from './ContactInfo'
 import ContactDetails from './ContactDetails'
 import ContactCreate from './ContactCreate'
 
-import update from 'react-addons-update';
-
 export default class Contact extends Component {
     constructor(props){
         super(props);
@@ -54,22 +52,15 @@ export default class Contact extends Component {
 
     handleCreate(contact){
         this.setState({
-
-            // contactData: update(
-            //     this.state.contactData,{$push:[contact]}
-            // )
-
             contactData:[...this.state.contactData,
                 contact
             ]
-
         })
-        console.log('create works');
     }
 
     handleRemove(){
         this.setState({
-
+            
         })
         console.log('remove works');
     }
