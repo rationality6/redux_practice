@@ -7,6 +7,8 @@ export default class ContactDetails extends Component {
             <div>
                 <h2>{this.props.contact.name}</h2>
                 <h2>{this.props.contact.phone}</h2>
+                <button onClick={this.props.onEdit}>Edit</button>
+                <button onClick={this.props.onDelete}>Delete</button>
             </div>
         );
         const blank = (<div>Not selected</div>);

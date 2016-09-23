@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ContactInfo from './ContactInfo'
 import ContactDetails from './ContactDetails'
 import ContactCreate from './ContactCreate'
+import R from 'ramda'
 
 export default class Contact extends Component {
     constructor(props){
@@ -10,14 +11,14 @@ export default class Contact extends Component {
             selectedKey: -1,
             keyword: '',
             contactData:[
-                {name:"Bbet",phone:'310 21349 2348'},
-                {name:"Aetty",phone:'210 21349 1234'},
-                {name:"Chaly",phone:'110 33 4321'},
-                {name:"Delt",phone:'010 21349 8792'},
-                {name:"Et",phone:'010 89 81192'},
-                {name:"Fete",phone:'0230 21349 2341'},
-                {name:"Gelte",phone:'01230 234 234'},
-                {name:"Heeilt",phone:'0110 897 543'},
+                {id: 1, name:"Bbet",phone:'310 21349 2348'},
+                {id: 2, name:"Aetty",phone:'210 21349 1234'},
+                {id: 3, name:"Chaly",phone:'110 33 4321'},
+                {id: 4, name:"Delt",phone:'010 21349 8792'},
+                {id: 5, name:"Et",phone:'010 89 81192'},
+                {id: 6, name:"Dlet",phone:'0230 21349 2341'},
+                {id: 7, name:"Gelte",phone:'01230 234 234'},
+                {id: 8, name:"Heeilt",phone:'0110 897 543'},
             ],
         }
         this.handleChange = this.handleChange.bind(this);
@@ -58,11 +59,21 @@ export default class Contact extends Component {
         })
     }
 
+    componentDidMount() {
+        console.log("hello")
+
+        const example = [1,2,3]
+        const new_array = R.reject((el) => el == 1, example)
+        console.log(new_array) // [2,3]
+    }
+
     handleRemove(){
+        let searchedData = this.handleSearche(this.state.contactData)
+        const contactToDelete = searchedData[this.state.selectedKey]
+
         this.setState({
-            
+            contactData: R.reject((el) => el.id == contactToDelete.id, this.state.contactData)
         })
-        console.log('remove works');
     }
 
     handleEdit(name, phone){
@@ -99,6 +110,7 @@ export default class Contact extends Component {
                 <ContactDetails
                     isSelected={this.state.selectedKey != -1}
                     contact={this.handleSearche(this.state.contactData)[this.state.selectedKey]}
+                    onDelete={this.handleRemove}
                 />
                 <ContactCreate
                         onCreate = {this.handleCreate}
