@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
 
-const propTypes = {
-
-};
-const defaultProps = {
-
-};
 class Users extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return(
       <div>
@@ -19,7 +10,5 @@ class Users extends Component {
     );
   }
 }
-Users.propTypes = propTypes;
-Users.defaultProps = defaultProps;
 
 export default Users;

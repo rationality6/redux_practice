@@ -54,10 +54,14 @@ export default class Contact extends Component {
     }
 
     handleCreate(contact){
+        // this.setState({
+        //     contactData:[...this.state.contactData,
+        //         contact
+        //     ]
+        // })
+
         this.setState({
-            contactData:[...this.state.contactData,
-                contact
-            ]
+            contactData:this.state.contactData.concat(contact)
         })
     }
 

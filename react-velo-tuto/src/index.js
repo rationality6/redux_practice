@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './components/App';
 import Hello from './components/Hello'
 import Questions from './components/Questions'
+import Immutable from './components/Immutable'
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById('root')
+// );
 
 // ReactDOM.render(
 //   <Hello />,
@@ -18,3 +19,8 @@ ReactDOM.render(
 //   <Questions />,
 //   document.getElementById('questions')
 // );
+
+ReactDOM.render(
+  <Immutable />,
+  document.getElementById('immu')
+);
