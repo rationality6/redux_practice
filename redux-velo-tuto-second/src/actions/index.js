@@ -18,3 +18,9 @@ export function setColor(color){
         color
     }
 }
+
+export function incre(){
+    return{
+        type: types.INCRE
+    }
+}

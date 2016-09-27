@@ -15,7 +15,7 @@ const store = createStore(reducers);
 // store.subscribe(function(){
 //     console.log(JSON.stringify(store.getState(),null,4))
 // });
-//
+
 // store.dispatch(actions.increment());
 // store.dispatch(actions.increment());
 // store.dispatch(actions.decrement());

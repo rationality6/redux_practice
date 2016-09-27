@@ -1,14 +1,16 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Value from '../components/Value'
 import Control from '../components/Control'
 
-import * as actions from '../actions'
+// import * as actions from '../actions'
+import {increment,decrement,setColor} from '../actions'
 import {connect} from 'react-redux';
 // import {connect, bindActionCreators} from 'react-redux';
 
 class Counter extends Component {
     constructor(props){
         super(props);
+        console.log(this);
 
         this.setRandomColor = this.setRandomColor.bind(this);
     }
@@ -44,16 +46,17 @@ class Counter extends Component {
 const mapStateToProps = (state) => {
     return {
         number: state.counter.number,
-        color: state.ui.color
+        color: state.ui.color,
+        dumbObject:state.counter.dumbObject
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     // return bindActionCreators(actions,dispatch);
     return{
-        handleIncrement:() => {dispatch(actions.increment())},
-        handleDecrement:() => {dispatch(actions.decrement())},
-        handleSetColor:(color) => {dispatch(actions.setColor(color))}
+        handleIncrement:() => {dispatch(increment())},
+        handleDecrement:() => {dispatch(decrement())},
+        handleSetColor:(color) => {dispatch(setColor(color))}
     };
 };
 
