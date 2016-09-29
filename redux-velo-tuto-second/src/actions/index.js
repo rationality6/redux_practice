@@ -32,5 +32,9 @@ export function decre(){
 }
 
 export function typing(text){
-  return{type:types.TYPING, text: text}
+  return {type:types.TYPING, text: text}
+}
+
+export function setUserData(data){
+  return {type:types.SET_USER_DATA, data: data}
 }
