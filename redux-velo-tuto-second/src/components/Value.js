@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 const defaultProps = {
     number: -1
@@ -6,7 +6,7 @@ const defaultProps = {
 
 class Value extends Component {
     render() {
-        return(
+        return (
             <div>
                 {this.props.number}
             </div>
