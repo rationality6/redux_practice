@@ -8,7 +8,7 @@ const initialState = {
         u: 1,
         m: 2,
         b: 3
-    }
+    },
 };
 
 export default function counter(state = initialState, action) {
