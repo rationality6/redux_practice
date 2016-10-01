@@ -3,7 +3,7 @@ import Value from '../components/Value'
 import Control from '../components/Control'
 
 // import * as actions from '../actions'
-import {increment,decrement,setColor} from '../actions'
+import * as actions from '../actions'
 import {connect} from 'react-redux';
 // import {connect, bindActionCreators} from 'react-redux';
 
@@ -11,8 +11,8 @@ class Counter extends Component {
     constructor(props){
         super(props);
         console.log(this);
-
         this.setRandomColor = this.setRandomColor.bind(this);
+        this.handleTextCopy = this.handleTextCopy.bind(this);
     }
 
     setRandomColor(){
@@ -22,6 +22,11 @@ class Counter extends Component {
             Math.floor((Math.random()*55)+ 200),
         ]
         this.props.handleSetColor(color);
+    }
+
+    handleTextCopy(e){
+        const text = e.target.value
+        this.props.handleTextCopy(text)
     }
 
     render() {
@@ -38,6 +43,11 @@ class Counter extends Component {
                     onSubtract={this.props.handleDecrement}
                     onRandomizeColor={this.setRandomColor}
                 ></Control>
+            <p>{this.props.text}</p>
+                <input
+                    value={this.props.text}
+                    onChange={this.handleTextCopy}
+                />
             </div>
         );
     }
@@ -47,16 +57,18 @@ const mapStateToProps = (state) => {
     return {
         number: state.counter.number,
         color: state.ui.color,
-        dumbObject:state.counter.dumbObject
+        dumbObject: state.counter.dumbObject,
+        text: state.typeCopy.text,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     // return bindActionCreators(actions,dispatch);
     return{
-        handleIncrement:() => {dispatch(increment())},
-        handleDecrement:() => {dispatch(decrement())},
-        handleSetColor:(color) => {dispatch(setColor(color))}
+        handleIncrement:() => {dispatch(actions.increment())},
+        handleDecrement:() => {dispatch(actions.decrement())},
+        handleSetColor:(color) => {dispatch(actions.setColor(color))},
+        handleTextCopy:(text) => {dispatch(actions.typeCopy(text))},
     };
 };
 
