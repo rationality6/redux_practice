@@ -10,7 +10,6 @@ import {connect} from 'react-redux';
 class Counter extends Component {
     constructor(props){
         super(props);
-        console.log(this);
         this.setRandomColor = this.setRandomColor.bind(this);
         this.handleTextCopy = this.handleTextCopy.bind(this);
     }

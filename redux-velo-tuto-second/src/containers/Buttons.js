@@ -12,12 +12,10 @@ class Buttons extends Component {
 
     constructor(props) {
         super(props);
-
         this.setText = this.setText.bind(this);
     }
 
     setText(e){
-        console.log(e.target.value);
         const text = e.target.value
         this.props.handleTyping(text)
     }

@@ -5,6 +5,7 @@ import Home from './components/Home'
 import Counter from './containers/Counter'
 import Buttons from './containers/Buttons'
 import Users from './containers/Users';
+import Topics from './containers/Topics'
 
 class App extends Component {
 
@@ -16,11 +17,14 @@ class App extends Component {
                     | <Link to="/counter">Counter</Link>
                     | <Link to="/buttons">Buttons</Link>
                     | <Link to="/users">Users</Link>
+                    | <Link to="/topics">Topics</Link>
                     <hr/>
+
                     <Match exactly pattern='/' component={Home}></Match>
                     <Match pattern='/counter' component={Counter}></Match>
                     <Match pattern='/buttons' component={Buttons}></Match>
                     <Match pattern='/users' component={Users}></Match>
+                    <Match pattern='/topics' component={Topics}></Match>
                 </div>
             </Router>
         )

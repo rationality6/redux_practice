@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-import axios from 'axios'
 import {connect} from 'react-redux';
 import ProjectApi from '../utils/ProjectApi'
 
 class Users extends Component {
-
     constructor(props) {
         super(props)
         this.handleRefresh = this.handleRefresh.bind(this)
@@ -22,7 +20,6 @@ class Users extends Component {
         return (<div key={`user_${user.id}`}>
             {user.id} | {user.name}
         </div>)
-
     }
 
     render() {

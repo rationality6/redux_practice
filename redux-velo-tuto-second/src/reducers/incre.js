@@ -2,7 +2,7 @@ import * as types from '../actions/ActionTypes'
 
 const initialState = {
     number: 0,
-    text: '',
+    text: ''
 }
 
 export default function incre(state = initialState, action) {
